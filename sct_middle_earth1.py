@@ -2,6 +2,7 @@
 # "Learn Python the Hard Way". It is not perfect by any stretch.
 # The first area for improvement is somehow getting the direction
 # choice turned into a method so there is not as much repeated text.
+# This is a change purely for the purpose of practicing with GitHub
 
 from game_scenes import *
 
