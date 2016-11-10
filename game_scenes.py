@@ -4,7 +4,7 @@ from random import randint
 # Initial config of the various parties. Elves and Dwarves are broken up in
 # order to allow for proper listing of options in the Elf and Dwarf Villages
 main_party = ['Frodo', 'Sam'] 
-dwarves = ['Gimli', 'Borin']
+dwarves = ['Gimli', 'Borin', 'Balin']
 elves = ['Legolas', 'Amras']
 
 # Establishes an umbrella class to hold all of the scenes
@@ -146,7 +146,7 @@ class DwarfVillage(Scene):
 
 	def enter(self):
 		print "Welcome to the Dwarf Village. You are welcomed by"
-		print "Gimli and Borin. They are willing to join your party."
+		print "Gimli, Borin and Balin. They are willing to join your party."
 		print "You can add them by typing 'add'. Enter 'pass' to keep going."
 		
 		add_pass = raw_input()
@@ -209,7 +209,10 @@ class GnomeForest(Scene):
 		print "The only way to survive these evil creatures is to have the"
 		print "sense of the trees and powers of a dwarf axe in your party." 
 		
-		if 'Gimli' in main_party or 'Borin' in main_party:
+		if (
+			'Gimli' in main_party or 'Borin' in main_party 
+			or 'Balin' in main_party
+		):
 			print "Fortunately you have a dwarf"
 			print "who helps you defeat the evil gnomes."
 			
@@ -279,7 +282,10 @@ class MountainPass(Scene):
 	def enter(self):
 		print "You have reached the Mountain Pass. It is an scary looking." 
 		
-		if 'Gimli' in main_party or 'Borin' in main_party:
+		if (
+			'Gimli' in main_party or 'Borin' in main_party 
+			or 'Balin' in main_party
+		):
 			print "Fortunately you have a dwarf who knows a secret passage"
 			print "to the North. Do you want to go North or turn back South?"
 			direction = raw_input("N or S? ")
@@ -328,7 +334,8 @@ class OrcPass(Scene):
 	def enter(self):
 		print "You have come to a pass filled with Orcs."
 		if (
-			('Gimli' in main_party or 'Borin' in main_party)
+			('Gimli' in main_party or 'Borin' in main_party
+			or 'Balin' in main_party)
 			and ('Legolas' in main_party or 'Amras' in main_party)
 		):
 			print "The only way to survive the Orcs is to have the skills"
